@@ -3,19 +3,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :meetings
   end
-
   resources :rooms do
     resources :meetings
   end
-  get 'welcome/index'
-
-  get 'meetings/create'
-
-  get '/index' => 'rooms#index'
-
-  get '/show' => 'rooms#show'
-  get '/admin' => 'rooms#new'
-  get 'users/profile_page'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
