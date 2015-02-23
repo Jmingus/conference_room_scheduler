@@ -5,9 +5,28 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+	    <ul>
+		    <% unless user_signed_in? %>
+	   <li class="btn"><%= link_to 'Home', root_path %></li>
+      <li class="btn"><%= link_to 'Sign-Up', new_user_registration_path %></li>
+      <li class="btn"><%= link_to 'Sign-In', new_user_session_path %></li>
+			    <% else %>
+	        <li class="btn btn-success"><%= current_user.first_name %> <%= current_user.last_name %></li>
+      <li class="btn"><%= link_to 'Sign-Out', destroy_user_session_path, method: :delete %></li>
+		    <li class="btn"><%= link_to 'Room Index', index_path %></li>
+		    <li class="btn"><%= link_to 'Room Show', show_path %></li>
 
+			    <% end %>
+	    </ul>
+    </div>
+  </div>
+</nav>
 <%= yield %>
 
 </body>

@@ -4,7 +4,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+	  <%= f.input :first_name, required: true, autofocus: true %>
+	  <%= f.input :last_name, required: true %>
+	  <%= f.input :date_of_birth, required: true, as: :date,:start_year => 1950, :end_year => 2015,:order => [ :day, :month, :year] %>
+	  <%= f.input :favorite_color, required: true, collection: %w[Blue Green Red Orange Yellow Purple White Black] %>
+    <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
