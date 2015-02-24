@@ -1,0 +1,50 @@
+<div class="col-md-4">
+	<ul>
+		<li><%= image_tag @room.room_image.url(:large) %></li>
+		<li><strong>Room Name -</strong> <%= @room.room_name %></li>
+		<li><strong>Room Description -</strong> <%= @room.room_description %></li>
+		<li><strong>Room Location -</strong> <%= @room.room_location %></li>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Create Meeting
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New Meeting</h4>
+        </div>
+        <div class="modal-body">
+          <%= render partial: "meetings/create" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+	</ul>
+</div>
+
+<div class="col-md-8">
+   <table class="table table-hover">
+	   <thead>
+		   <tr>
+		     <td>Title</td>
+		      <td> Start Time</td>
+		      <td>End Time</td>
+	   </thead>
+     <% @room.meetings.each do |meeting| %>
+	   <tbody>
+	   <tr>
+		   <td><%= meeting.meeting_name %></td>
+	     <td><%= meeting.start_time%></td>
+	     <td><%= meeting.end_time %></td>
+	   </tr>
+	   </tbody>
+     <% end %>
+   </table>
+
+</div>

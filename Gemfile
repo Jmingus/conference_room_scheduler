@@ -43,7 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'mandrill_dm'
 gem 'hirb'
 gem 'kaminari'
 gem 'puma'
