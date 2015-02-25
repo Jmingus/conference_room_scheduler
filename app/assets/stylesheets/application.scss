@@ -1091,7 +1091,7 @@
       line-height: inherit;
     }
     a {
-      color: #008cba;
+      color: white;
       text-decoration: none;
     }
     a:hover,
@@ -6870,4 +6870,18 @@
     }
     .modal .close {
       color: #222222;
+    }
+
+    .forms{
+      margin-left: 20%;
+      margin-right: 20%;
+      max-width: 30%;
+      .dob{
+        max-width: 30%;
+
+      }
+
+      .color{
+        max-width: 30%;
+      }
     }

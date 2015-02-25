@@ -2,7 +2,7 @@
 <div class="col-md-3">
 	<ul>
 		<li><%= image_tag room.room_image.url(:medium) %></li>
-		<li>Room Name - <%= link_to room.room_name, room_path(room) %></li>
+		<li>Room Name - <%= link_to room.room_name, room_path(room), class: "room_links" %></li>
 		<li>Description - <%= room.room_description %></li>
 		<li>Room Location - <%= room.room_location %></li>
 	</ul>

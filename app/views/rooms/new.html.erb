@@ -1,7 +1,9 @@
-<%= simple_form_for(@room, multipart: true) do |f| %>
-  <%= f.input :room_image, as: :file %>
-	<%= f.input :room_name %>
-	<%= f.input :room_description %>
-	<%= f.input :room_location %>
-	<%= f.button :submit %>
-<% end %>
+<div class="forms">
+	<%= simple_form_for(@room, multipart: true) do |f| %>
+	  <%= f.input :room_image, as: :file %>
+		<%= f.input :room_name %>
+		<%= f.input :room_description %>
+		<%= f.input :room_location %>
+		<%= f.button :submit %>
+	<% end %>
+</div>

@@ -39,7 +39,7 @@
      <% @room.meetings.each do |meeting| %>
 	   <tbody>
 	   <tr>
-		   <td><%= link_to meeting.meeting_name, user_meeting_comment_path(comment) %></td>
+		   <td><%= link_to meeting.meeting_name,  room_meeting_path(@room, meeting), class: 'meeting_links' %></td>
 	     <td><%= meeting.start_time%></td>
 	     <td><%= meeting.end_time %></td>
 	   </tr>

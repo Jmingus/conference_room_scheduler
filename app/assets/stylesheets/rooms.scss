@@ -14,9 +14,9 @@
 
 .paginate{
   float:right;
-  margin-right: 10%;
   margin-top: 4px;
-  background-color: #B9DA4A;
+  background-color: #43AC6A;
+  padding-right: 10px;
 }
 
 .col-md-4{
@@ -26,4 +26,12 @@
       margin-bottom: 10px;
     }
   }
+}
+
+.room_links{
+  color: #43AC6A;
+}
+
+.meeting_links{
+  color: #43AC6A;
 }
