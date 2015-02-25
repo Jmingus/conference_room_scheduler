@@ -13,7 +13,7 @@ class MeetingsController < ApplicationController
      # NotificationMailer.new_meeting(@meeting).deliver_now
       redirect_to root_path
     else
-      render new: @meeting.errors
+      render new: @meeting.errors.full_messages
     end
   end
 

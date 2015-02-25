@@ -1,4 +1,4 @@
-<%= simple_form_for(@meeting, @comment) do |f| %>
+<%= simple_form_for([current_user, @meeting, @comment]) do |f| %>
 	<%= f.input :message %>
 	<%= f.button :submit %>
 <% end %>
