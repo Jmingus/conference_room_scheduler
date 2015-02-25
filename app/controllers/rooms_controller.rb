@@ -3,7 +3,9 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @meeting = Meeting.new
+    @comment = Comment.find(params[:id])
   end
+
   def new
     @room = Room.new
   end

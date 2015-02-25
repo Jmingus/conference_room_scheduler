@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :meetings
+  has_many :comments
+  has_many :meeting_comments, through: :meetings, source: :comments
 end

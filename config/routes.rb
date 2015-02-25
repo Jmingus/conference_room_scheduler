@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users do
-    resources :meetings
+    resources :meetings do
+      resources :comments
+    end
   end
+
   resources :rooms do
     resources :meetings
   end
