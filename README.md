@@ -6,19 +6,18 @@
 ## Things that are done. ##
 		
      - Users can sign-in and sign-out.
-     - Create Meetings in a Room.
+     - Create Meetings in a Room and displays the user who made it.
      - Pagination.
      - AWS and paperclip working.
+     - Validations.
+		 - User can create Comments on Meetings and see who posted it.
 
 ## Things that need to be done ##
 	
-	
-
+		 - Make Javascript TimeFormatter work correctly
+		 - Make Data Tables work correctly
      - Mailer working
-     - Display user that created meeting
-     - Make meeting form look better
      - Make meetings in time durations
-     - Add validations
-	 - Make things redirect correctly
+
 	
 [Heroku-Link](https://conference-83242.herokuapp.com/)
