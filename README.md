@@ -10,12 +10,12 @@
      - Pagination.
      - AWS and paperclip working.
      - Validations.
-		 - User can create Comments on Meetings and see who posted it.
+     - User can create Comments on Meetings and see who posted it.
 
 ## Things that need to be done ##
 	
-		 - Make Javascript TimeFormatter work correctly
-		 - Make Data Tables work correctly
+     - Make Javascript TimeFormatter work correctly
+     - Make Data Tables work correctly
      - Mailer working
      - Make meetings in time durations
 
