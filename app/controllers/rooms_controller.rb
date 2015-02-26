@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create(room_params)
     if @room.save
-      redirect_to root_path, flash: { notice: 'Room Created'}
+      redirect_to rooms_path, flash: { notice: 'Room Created'}
     else
       render new: @room.errors
     end

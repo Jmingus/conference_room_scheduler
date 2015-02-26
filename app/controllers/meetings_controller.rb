@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
 
   def show
+    @room = Room.find(params[:room_id])
     @meeting = Meeting.find(params[:id])
     @comment = Comment.new
   end
@@ -11,9 +12,11 @@ class MeetingsController < ApplicationController
     @meeting.user_id = current_user.id
     if @meeting.save
      # NotificationMailer.new_meeting(@meeting).deliver_now
-      redirect_to root_path
+      flash[:notice] = "Meeting has been created!"
+      redirect_to room_path(@room)
     else
-      render new: @meeting.errors.full_messages
+      flash[:notice] = "Meeting has errors!"
+      redirect_to room_path(@room)
     end
   end
 

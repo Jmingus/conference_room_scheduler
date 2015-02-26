@@ -29,22 +29,25 @@
 </div>
 
 <div class="col-md-8">
-   <table class="table table-hover">
+   <table id ="meetings-table" class="table table-striped">
 	   <thead>
 		   <tr>
-		     <td>Title</td>
-		      <td> Start Time</td>
-		      <td>End Time</td>
+		     <td class="td-head">Title</td>
+		      <td class="td-head"> Start Time</td>
+		      <td class="td-head">End Time</td>
+	        <td class="td-head">User</td>
 	   </thead>
      <% @room.meetings.each do |meeting| %>
 	   <tbody>
 	   <tr>
 		   <td><%= link_to meeting.meeting_name,  room_meeting_path(@room, meeting), class: 'meeting_links' %></td>
-	     <td><%= meeting.start_time%></td>
-	     <td><%= meeting.end_time %></td>
+	     <td><time><%= meeting.start_time%></time></td>
+	     <td><time><%= meeting.end_time %></time></td>
+		   <td><%= meeting.user.first_name %></td>
 	   </tr>
 	   </tbody>
      <% end %>
    </table>
-
+  <%= link_to 'Back', rooms_path, class: 'btn btn-success' %>
 </div>
+

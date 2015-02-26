@@ -28,11 +28,22 @@
 
 <div class="col-md-9">
 	<div class="right-side">
-
-	  <% @meeting.comments.each do |comment| %>
-			<%= comment.message %>
-		<%end%>
-
-
+		<table id="comments-table" class="table table-striped">
+			<thead>
+				<tr>
+					<td class="td-head">Comment</td>
+					<td class="td-head">User</td>
+				</tr>
+			</thead>
+		  <% @meeting.comments.each do |comment| %>
+		  <tbody>
+				<tr>
+					<td><%= comment.message %></td>
+					<td><%= comment.meeting.user.first_name %></td>
+				</tr>
+			</tbody>
+		  <%end%>
+		</table>
+	<%= link_to 'Back', room_path(@room), class: 'btn btn-success' %>
 	</div>
 </div>
