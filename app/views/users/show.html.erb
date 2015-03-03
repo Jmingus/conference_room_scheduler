@@ -1,0 +1,30 @@
+<div class="col-md-4">
+	<h2 class="profile_page_name"><%= @user.first_name %> <%= @user.last_name %></h2>
+	<hr>
+	<ul>
+	  <li><h3>Date of Birth - <%= @user.date_of_birth %></h3></li>
+		<li><h3>Favorite Color - <%= @user.favorite_color %></h3></li>
+		<li><h3>Email - <%= @user.email %></h3></li>
+	</ul>
+</div>
+<div class="col-md-8">
+	<table id ="meetings-table" class="table table-striped">
+		<thead>
+			<tr>
+				<td class="td-head">Title</td>
+				<td class="td-head"> Start Time</td>
+				<td class="td-head"> End Time</td>
+			</tr>
+		</thead>
+	  <% @user.meetings.each do |meeting| %>
+		<tbody>
+		<tr>
+			<td><%= meeting.meeting_name %></td>
+			<td><%= meeting.start_time %></td>
+			<td><%= meeting.end_time %></td>
+		</tr>
+		</tbody>
+	  <% end %>
+	</table>
+
+</div>

@@ -2,6 +2,7 @@
     @import 'bootstrap';
     @import 'rooms';
     @import 'meetings';
+    @import 'users';
     @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
     /*!
  * bootswatch v3.3.2
@@ -6898,4 +6899,9 @@
 
 .links-nav{
   color: white;
+}
+h2 {
+  .profile_page_name {
+    margin-left: 5%;
+  }
 }
