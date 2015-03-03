@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_filter :authenticate_user!
 
   def show
     @room = Room.find(params[:id])

@@ -28,6 +28,9 @@
     </div>
   </div>
 </nav>
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
 <%= yield %>
 <script src='https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
