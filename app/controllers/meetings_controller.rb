@@ -11,7 +11,7 @@ class MeetingsController < ApplicationController
     @meeting = @room.meetings.create(meeting_params)
     @meeting.user_id = current_user.id
     if @meeting.save
-     # NotificationMailer.new_meeting(@meeting).deliver_now
+     NotificationMailer.new_meeting(@meeting).deliver_now
       flash[:notice] = "Meeting has been created!"
       redirect_to room_path(@room)
     else

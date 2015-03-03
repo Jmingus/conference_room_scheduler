@@ -1,12 +1,11 @@
 class NotificationMailer < ApplicationMailer
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.notification_mailer.new_user.subject
   #
-  #def new_meeting(meeting)
-   # @meeting = meeting
-   # mail to: meeting.meeting_author_email, subject: "Your Meeting has Been Scheduled"
-  #end
+  def new_meeting(meeting)
+    @meeting = meeting
+    mail to: meeting.meeting_author_email, subject: "Your Meeting has Been Scheduled"
+  end
 end
