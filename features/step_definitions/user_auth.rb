@@ -3,16 +3,16 @@ Given(/^I am not logged in$/) do
 end
 
 Given(/^I have a valid account$/) do
-  User.create!(email: 'user@example.com',
-      password: 'password',
-      first_name: 'Tim',
-      last_name: 'Frank',
-      favorite_color: 'blue',
-      date_of_birth: '7/2/1992')
+  User.create!(email:'user@example.com',
+      password:'password',
+      first_name:'Tim',
+      last_name:'Frank',
+      favorite_color:'blue',
+      date_of_birth:'7/2/1992')
 end
 
 When(/^I pick "(.*?)" from user_date_of_birth_(\d+)i$/) do |item, select_box|
-  select(item, :from => select_box)
+  select_date(item, :with => select_box)
 end
 
 When(/^I pick "(.*?)" from user_favorite_color$/) do |arg1|
