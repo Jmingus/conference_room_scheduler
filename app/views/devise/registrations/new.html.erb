@@ -12,6 +12,7 @@
 		<div class="color">
 	  <%= f.input :favorite_color, required: true, collection: %w[Blue Green Red Orange Yellow Purple White Black] %>
 		</div>
+		<%= f.input :phone_number, required: true %>
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
     <%= f.input :password_confirmation, required: true, label: 'Confirmation' %>
