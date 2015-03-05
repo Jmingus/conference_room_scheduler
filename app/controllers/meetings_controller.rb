@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
   before_filter :authenticate_user!
 
+
   def show
     @room = Room.find(params[:room_id])
     @meeting = Meeting.find(params[:id])
@@ -13,6 +14,7 @@ class MeetingsController < ApplicationController
     @meeting.user_id = current_user.id
     if @meeting.save
      NotificationMailer.new_meeting(@meeting).deliver_now
+     Meeting.meeting_reminder(current_user, "#{@meeting.user.first_name} your meeting is starting at, #{@meeting.start_time} and ending at #{@meeting.end_time}.")
       flash[:notice] = "Meeting has been created!"
       redirect_to room_path(@room)
     else
